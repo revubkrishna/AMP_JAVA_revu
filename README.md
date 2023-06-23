@@ -1,2 +1,5 @@
 # AMP_JAVA_revubkrishna
 Submitting the 2 scenarios for AMP
+
+For Scenario 1, AmazonBase.java file under 'pages' package is the base script that contains all the code for running AmazonRun.java file, which is under 'cases' package
+For Scenario 2, MMTBase.java file under 'pages' package is the base script that contains all the code for running MMTRun.java file, which is under 'cases' package
