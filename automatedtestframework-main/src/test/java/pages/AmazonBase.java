@@ -10,27 +10,24 @@ public class AmazonBase extends ATFBasePage {
     
     public static final String shirts = "(//a[normalize-space()='Shirts'])[1]"; 
     
-	public static final String shirt = "/html/body/div[1]/div[2]/div[2]/div[3]/div[3]/div/div[2]/div[2]/ul/li[1]/span/div/a";
+	public static final String shirt = "(//ul[@class='a-unordered-list a-nostyle a-horizontal octopus-pc-card-list octopus-pc-card-height-v3'])//li[1]//a";
 	 
-	public static final String quicklookcss = "#centerCol"; //relcss
-	public static final String quickxp = "/html/body/div[1]/div[2]/div[2]/div[3]/div[3]/div/div[2]/div[2]/ul/li[1]/span/div/span/span/span/input";
-	public static final String quicklookindex = "(//input[@type='submit'])[16]";
-	
-    public static final String detcss = "#centerCol";
-    public static final String detindex = "(//a[@class='a-button-text'][normalize-space()='See product details'])[4]";
-    public static final String detxp = "/html/body/div[4]/div/div/div/div/div[1]/div[1]/div/div/span[3]/span/span/a";
+	public static final String quicklook = "(//span[@class='a-button-inner']//span[text()='Quick look'])[position()=1]"; 
+
+    public static final String det = "(//div[@class='a-popover-wrapper']//a[contains(@class, 'a-button-text') and contains(text(), 'See product details')])";
     
-    public static final String color = "(//img[@alt='Brown'])[1]";
+    public static final String color = "//li[@id='color_name_0']";
 	
 	public static final String size = "//select[@id='native_dropdown_selected_size_name']";
 	public static final String sizedrp = "(//option[@id='native_size_name_3'])[1]";
+	
 	public static final String product = "//span[@id='productTitle']";
 	
-	public static final String quantity = "//*[@id=\"quantity\"]";
+	public static final String quantity = "//select[@name='quantity']";
 	
-	public static final String  price = "//*[@id=\"corePrice_feature_div\"]/div/span[1]/span[2]/span[2]";
+	public static final String  price = " //span[@class='a-price aok-align-center']";
 	
-	public static final String cart = "/html/body/div[2]/div[2]/div[5]/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div[3]/div/div[1]/div/div/div/form/div/div/div/div/div[3]/div/div[32]/div[1]/span/span/span/input";
+	public static final String cart = "//span[text()='Add to Cart']";
 
 	public static final String gotocart = "//a[@href='/cart?ref_=sw_gtc']";
 
@@ -57,30 +54,49 @@ public class AmazonBase extends ATFBasePage {
 
 	    webController.moveToLocator(shirt);
 
+	    webController.moveToLocatorAndClick(quicklook);
+
+	    do {
+	    webController.click(det);
+	    }while (webController.isElementPresent(det));
 	    
-	    webController.click(quickxp);
-	    webController.waitForPageLoad();
 	    
-	    webController.moveToLocatorAndClick(detxp);
-	   
-        
 	}
-	public void pdp()
+	@SuppressWarnings("unused")
+	public void pdp() throws InterruptedException
 	{
 		
 		webController.waitForPageLoad();
-		webController.click(color);
+		
+		for(int i=0; i<10; i++)
+		{
+			webController.click("//li[@id='color_name_"+ i + "']");
+			webController.waitForElementFound(cart, 5);
+			
+			if (webController.isElementPresent(cart)==false) {
+				i++;
+			}
+			break;
+		}
+		
+	
+
+		
 		webController.selectByVisibleText(size, "L");
 		System.out.println("THe name of the product is: " +webController.getText(product));
 		System.out.println("The size of the product is: " + webController.getText(size));
 		System.out.println("The quantity is: "+ webController.getText(quantity));
 		System.out.println("The price of the product is: " + webController.getText(price));
-		webController.findClickableElement(cart);
-		webController.click(cart);
+		
+		 do {
+		webController.moveToLocatorAndClick(cart);
+		break;
+		 }while (webController.isElementPresent(cart));
 	}
 	
 	public void bag()
 	{
+		webController.waitForPageLoad();
 		webController.click(gotocart);
 		System.out.println("The no. of items in the cart is: " + webController.getText(bag));
 	

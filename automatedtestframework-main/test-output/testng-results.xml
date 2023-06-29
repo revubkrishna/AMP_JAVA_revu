@@ -1,106 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-26T08:08:07Z" name="Default suite" finished-at="2023-06-26T08:08:34Z" duration-ms="27673">
+  <suite started-at="2023-06-29T14:52:19Z" name="Default suite" finished-at="2023-06-29T14:52:47Z" duration-ms="28316">
     <groups>
       <group name="regression">
-        <method signature="AmazonRun.amazon()[pri:0, instance:cases.AmazonRun@2250b9f2]" name="amazon" class="cases.AmazonRun"/>
+        <method signature="MMTRun.mmt()[pri:0, instance:cases.MMTRun@2250b9f2]" name="mmt" class="cases.MMTRun"/>
       </group> <!-- regression -->
     </groups>
-    <test started-at="2023-06-26T08:08:07Z" name="Default test" finished-at="2023-06-26T08:08:34Z" duration-ms="27673">
-      <class name="cases.AmazonRun">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:cases.AmazonRun@2250b9f2]" started-at="2023-06-26T13:38:07Z" name="beforeSuite" finished-at="2023-06-26T13:38:07Z" duration-ms="8" status="PASS">
+    <test started-at="2023-06-29T14:52:19Z" name="Default test" finished-at="2023-06-29T14:52:47Z" duration-ms="28316">
+      <class name="cases.MMTRun">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:cases.MMTRun@2250b9f2]" started-at="2023-06-29T20:22:19Z" name="beforeSuite" finished-at="2023-06-29T20:22:19Z" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeTest(java.lang.reflect.Method)[pri:0, instance:cases.AmazonRun@2250b9f2]" started-at="2023-06-26T13:38:07Z" name="beforeTest" finished-at="2023-06-26T13:38:16Z" duration-ms="9262" status="PASS">
+        <test-method is-config="true" signature="beforeTest(java.lang.reflect.Method)[pri:0, instance:cases.MMTRun@2250b9f2]" started-at="2023-06-29T20:22:19Z" name="beforeTest" finished-at="2023-06-29T20:22:26Z" duration-ms="7797" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void cases.AmazonRun.amazon() throws java.lang.InterruptedException]]>
+                <![CDATA[public void cases.MMTRun.mmt() throws java.lang.InterruptedException,java.text.ParseException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="amazon()[pri:0, instance:cases.AmazonRun@2250b9f2]" started-at="2023-06-26T13:38:16Z" name="amazon" description="Test Cart adding" finished-at="2023-06-26T13:38:33Z" duration-ms="17210" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: (//img[@alt='Brown'])[1] (tried for 10 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//img[@alt='Brown'])[1] (tried for 10 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at utils.ATFWebController.findClickableElement(ATFWebController.java:640)
-	at utils.ATFWebController.click(ATFWebController.java:505)
-	at utils.ATFWebController.click(ATFWebController.java:496)
-	at pages.AmazonBase.pdp(AmazonBase.java:72)
-	at cases.AmazonRun.amazon(AmazonRun.java:26)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: (//img[@alt='Brown'])[1]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'USBLRRBKRISHNA1', ip: '10.31.112.48', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
-	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:657)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:654)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	... 30 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="mmt()[pri:0, instance:cases.MMTRun@2250b9f2]" started-at="2023-06-29T20:22:26Z" name="mmt" finished-at="2023-06-29T20:22:46Z" duration-ms="19462" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- amazon -->
-        <test-method is-config="true" signature="quitBrowser(org.testng.ITestResult)[pri:0, instance:cases.AmazonRun@2250b9f2]" started-at="2023-06-26T13:38:33Z" name="quitBrowser" finished-at="2023-06-26T13:38:34Z" duration-ms="1185" status="PASS">
+        </test-method> <!-- mmt -->
+        <test-method is-config="true" signature="quitBrowser(org.testng.ITestResult)[pri:0, instance:cases.MMTRun@2250b9f2]" started-at="2023-06-29T20:22:46Z" name="quitBrowser" finished-at="2023-06-29T20:22:47Z" duration-ms="1046" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=amazon status=FAILURE method=AmazonRun.amazon()[pri:0, instance:cases.AmazonRun@2250b9f2] output={null}]]]>
+                <![CDATA[[TestResult name=mmt status=SUCCESS method=MMTRun.mmt()[pri:0, instance:cases.MMTRun@2250b9f2] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:cases.AmazonRun@2250b9f2]" started-at="2023-06-26T13:38:34Z" name="afterSuite" finished-at="2023-06-26T13:38:34Z" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:cases.MMTRun@2250b9f2]" started-at="2023-06-29T20:22:47Z" name="afterSuite" finished-at="2023-06-29T20:22:47Z" duration-ms="14" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- cases.AmazonRun -->
+      </class> <!-- cases.MMTRun -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
